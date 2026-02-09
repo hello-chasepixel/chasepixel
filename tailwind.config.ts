@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Quicksand"', 'system-ui', 'sans-serif'],
-        body: ['"Nunito"', 'system-ui', 'sans-serif'],
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        body: ['"Lato"', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
