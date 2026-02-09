@@ -72,6 +72,7 @@ export default {
           DEFAULT: "hsl(240, 27%, 14%)",
           light: "hsl(222, 48%, 16%)",
         },
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
