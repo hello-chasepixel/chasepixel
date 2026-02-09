@@ -13,10 +13,10 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-6">
-        <a href="#" className="font-display text-xl font-bold tracking-tight">
-          Chase<span className="text-primary">pixel</span>
+        <a href="#" className="font-display text-xl font-bold tracking-tight text-foreground">
+          chase<span className="text-primary">pixel</span> ✦
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -24,16 +24,16 @@ const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {l.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="text-sm font-medium bg-primary text-primary-foreground px-5 py-2 rounded-md hover:opacity-90 transition-opacity"
+            className="text-sm font-semibold bg-primary text-primary-foreground px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity"
           >
-            Get in Touch
+            Say Hello 👋
           </a>
         </div>
 
@@ -60,7 +60,7 @@ const Navbar = () => {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground transition-colors font-medium"
                 >
                   {l.label}
                 </a>
@@ -68,9 +68,9 @@ const Navbar = () => {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="font-medium bg-primary text-primary-foreground px-5 py-2 rounded-md text-center hover:opacity-90 transition-opacity"
+                className="font-semibold bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-center hover:opacity-90 transition-opacity"
               >
-                Get in Touch
+                Say Hello 👋
               </a>
             </div>
           </motion.div>

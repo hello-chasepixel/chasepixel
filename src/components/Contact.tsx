@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Mail, ArrowRight } from "lucide-react";
+import { Heart, ArrowRight } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-secondary/30">
+    <section id="contact" className="py-24 md:py-32 bg-card">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
@@ -12,22 +12,22 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-8">
-              <Mail className="w-7 h-7 text-primary" />
+              <Heart className="w-7 h-7 text-primary" />
             </div>
-            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-6">
-              Let's create something
+            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-6 text-foreground">
+              Let's make something
               <br />
-              <span className="text-gradient">remarkable.</span>
+              <span className="text-primary">you'll love.</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-10 max-w-md mx-auto leading-relaxed">
-              Have a project in mind? I'd love to hear about it. Let's discuss how
-              design can elevate your brand.
+              Got a project brewing? Whether it's a quick question or a big idea,
+              I'd love to chat. No pressure, just good vibes.
             </p>
             <a
               href="mailto:hello@chasepixel.com"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-medium px-8 py-3.5 rounded-md hover:opacity-90 transition-opacity text-sm group"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity text-sm group"
             >
-              Start a Conversation
+              Let's Talk
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
