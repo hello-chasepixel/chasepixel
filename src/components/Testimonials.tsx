@@ -1,67 +1,48 @@
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    quote:
-      "Chasepixel transformed our annual report into something our stakeholders actually enjoy reading. The AODA compliance was flawless.",
-    name: "Sarah M.",
-    role: "Communications Director",
-  },
-  {
-    quote:
-      "The infographics were exactly what we needed — complex data made beautifully simple. Turnaround was impressively fast.",
-    name: "James K.",
-    role: "Marketing Manager",
-  },
-  {
-    quote:
-      "Our social media engagement doubled after the redesign. The consistency across all platforms made a huge difference.",
-    name: "Priya D.",
-    role: "Brand Strategist",
-  },
-];
+import portfolioWebsite from "@/assets/portfolio-website.jpg";
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 md:py-32">
+    <section id="about" className="py-20 md:py-28 bg-card">
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16 text-center"
-        >
-          <p className="text-primary font-display font-semibold tracking-wide text-sm mb-4">
-            Kind Words ✦
-          </p>
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-foreground">
-            What people are saying.
-          </h2>
-        </motion.div>
+        <div className="flex flex-col md:flex-row gap-10 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="md:w-2/5"
+          >
+            <img
+              src={portfolioWebsite}
+              alt="Portfolio showcase - Accelerate Her Future website design"
+              className="rounded-2xl w-full shadow-lg"
+              loading="lazy"
+            />
+          </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={t.name}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-card border border-border rounded-2xl p-8 flex flex-col"
-            >
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <Quote className="w-5 h-5 text-primary" />
-              </div>
-              <p className="text-foreground leading-relaxed flex-1 mb-6">
-                "{t.quote}"
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="md:w-3/5"
+          >
+            <div className="space-y-5 text-muted-foreground text-sm leading-relaxed">
+              <p>
+                Working with Natasha Sidi from Chasepixel on a variety of design projects, including our Accelerate Her Future impact report design, slide deck design, and web design, has been an exceptional experience. Natasha approaches every project with remarkable dedication, self-leadership, and outstanding technical expertise.
               </p>
-              <div className="pt-4 border-t border-border">
-                <p className="font-display font-bold text-sm text-foreground">{t.name}</p>
-                <p className="text-muted-foreground text-sm">{t.role}</p>
-              </div>
-            </motion.div>
-          ))}
+              <p>
+                Natasha's ability to collaborate seamlessly with our team always ensures a smooth design process characterized by clear communication, thoughtful feedback integration, and creativity. Her design work consistently captures our brand's essence while going over and beyond to deliver a quality product. The new website and other design deliverables have received glowing feedback from our community, highlighting her ability to translate complex ideas into visually compelling and impactful designs.
+              </p>
+              <p>
+                Natasha's creative vision, reliability, and collaborative spirit have made her an indispensable partner on this journey. I highly recommend Natasha at Chasepixel for anyone seeking a talented, versatile, and results-driven designer to bring their vision to life.
+              </p>
+            </div>
+
+            <div className="mt-8">
+              <p className="font-display font-bold text-foreground">Dr. Golnaz Golnaraghi</p>
+              <p className="text-muted-foreground text-sm">Founder, Accelerate Her Future</p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
