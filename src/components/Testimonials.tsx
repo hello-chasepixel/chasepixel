@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 import portfolioWebsite from "@/assets/portfolio-website.jpg";
 
 const Testimonials = () => {
@@ -14,7 +15,7 @@ const Testimonials = () => {
           >
             <img
               src={portfolioWebsite}
-              alt="Portfolio showcase - Accelerate Her Future website design"
+              alt="Accelerate Her Future website design by Chasepixel"
               className="rounded-2xl w-full shadow-lg"
               loading="lazy"
             />
@@ -26,15 +27,16 @@ const Testimonials = () => {
             viewport={{ once: true }}
             className="md:w-3/5"
           >
-            <div className="space-y-5 text-muted-foreground text-sm leading-relaxed">
+            <Quote className="w-10 h-10 text-primary/30 mb-4" />
+            <div className="space-y-5 text-muted-foreground text-sm leading-relaxed font-serif italic">
               <p>
                 Working with Natasha Sidi from Chasepixel on a variety of design projects, including our Accelerate Her Future impact report design, slide deck design, and web design, has been an exceptional experience. Natasha approaches every project with remarkable dedication, self-leadership, and outstanding technical expertise.
               </p>
               <p>
-                Natasha's ability to collaborate seamlessly with our team always ensures a smooth design process characterized by clear communication, thoughtful feedback integration, and creativity. Her design work consistently captures our brand's essence while going over and beyond to deliver a quality product. The new website and other design deliverables have received glowing feedback from our community, highlighting her ability to translate complex ideas into visually compelling and impactful designs.
+                Natasha's ability to collaborate seamlessly with our team always ensures a smooth design process characterized by clear communication, thoughtful feedback integration, and creativity. Her design work consistently captures our brand's essence while going over and beyond to deliver a quality product.
               </p>
               <p>
-                Natasha's creative vision, reliability, and collaborative spirit have made her an indispensable partner on this journey. I highly recommend Natasha at Chasepixel for anyone seeking a talented, versatile, and results-driven designer to bring their vision to life.
+                Natasha's creative vision, reliability, and collaborative spirit have made her an indispensable partner on this journey. I highly recommend Chasepixel for anyone seeking a talented, versatile, and results-driven designer to bring their vision to life.
               </p>
             </div>
 

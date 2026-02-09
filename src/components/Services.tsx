@@ -8,53 +8,49 @@ import portfolioInfographic from "@/assets/portfolio-infographic.jpg";
 const services = [
   {
     image: portfolioReport,
-    title: "Transforming Complex Research into Accessible, Impactful Reports",
+    title: "Research reports that people actually want to read",
     description:
-      "Reports don't have to be dull. We transform complex data into clean, accessible, AODA-compliant documents that people actually want to read.",
+      "Your 50-page report took months to research. We make sure your stakeholders don't just skim the executive summary — they engage with every finding.",
     bullets: [
-      "Accessible & AODA Compliant",
-      "Clear Visual Storytelling",
-      "Data Made Beautiful",
-      "Print & Digital-Ready Formats",
-      "Designed with Equity",
+      "AODA-compliant & accessible to all readers",
+      "Clear visual hierarchy that guides through complex findings",
+      "Data visualizations that make statistics instantly clear",
+      "Branded templates you can reuse for future reports",
     ],
   },
   {
     image: portfolioSlides,
-    title: "Designing Slide Decks That Tell a Clear and Impactful Story",
+    title: "Slide decks that tell stories, not just list facts",
     description:
-      "Bring your research, presentations, and pitches to life with clean, compelling design.",
+      "You've got 20 minutes to convince funders or stakeholders. We design presentations that guide your audience through a clear, persuasive narrative.",
     bullets: [
-      "Visual storytelling that guides your audience",
-      "Complex ideas simplified through design",
-      "Branded templates for consistency and ease",
-      "Seamless integration of data and narrative",
-      "Ready-to-use formats for in-person or virtual delivery",
+      "One key idea per slide — no more walls of text",
+      "Data visualizations that support your story",
+      "Consistent branding that looks polished and professional",
+      "Both presentation and handout versions included",
     ],
   },
   {
     image: portfolioBrochure,
-    title: "Designing Flyers and Brochures with Purpose & Intention",
+    title: "Flyers and brochures designed with purpose",
     description:
-      "We create inclusive, high-impact print and digital collateral that supports your message.",
+      "We create inclusive, high-impact print and digital collateral that ensures your message gets the attention it deserves.",
     bullets: [
       "Built for both print distribution and digital sharing",
-      "Complex ideas simplified through design",
-      "Engaging visuals that support your message",
       "Eye-catching layouts that capture attention fast",
-      "Ready-to-use formats for in-person or virtual delivery",
+      "Engaging visuals that support your message",
+      "Accessible and inclusive by design",
     ],
   },
   {
     image: portfolioInfographic,
-    title: "Infographic Design That Makes Data Easy to Digest",
+    title: "Complex data, instantly understood",
     description:
-      "Turn complex stats and research into visual stories people actually understand.",
+      "Turn dense research and statistics into visual stories that any audience can grasp at a glance.",
     bullets: [
       "Clear visual storytelling that highlights key takeaways",
       "Simplifies complex data into digestible formats",
       "Designed for accessibility and AODA compliance",
-      "Branded to align seamlessly with your organization",
       "Optimized for use across print, web, and social media",
     ],
   },
@@ -63,44 +59,58 @@ const services = [
 const Services = () => {
   return (
     <section id="services" className="py-20 md:py-28">
-      <div className="container mx-auto px-6 space-y-12">
-        {services.map((s, i) => (
-          <motion.div
-            key={s.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.05 }}
-            className="bg-card border border-border rounded-2xl overflow-hidden"
-          >
-            <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-0`}>
-              <div className="md:w-2/5 aspect-[4/3] md:aspect-auto overflow-hidden">
-                <img
-                  src={s.image}
-                  alt={`Example of ${s.title}`}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">What we do</p>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground">
+            Design that makes complexity<br className="hidden md:block" /> feel effortless
+          </h2>
+        </motion.div>
+
+        <div className="space-y-10">
+          {services.map((s, i) => (
+            <motion.div
+              key={s.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+              className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-0`}>
+                <div className="md:w-2/5 aspect-[4/3] md:aspect-auto overflow-hidden">
+                  <img
+                    src={s.image}
+                    alt={`Example of ${s.title}`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+                  <h3 className="font-display font-bold text-xl md:text-2xl mb-3 text-foreground">
+                    {s.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                    {s.description}
+                  </p>
+                  <ul className="space-y-2.5">
+                    {s.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-2.5 text-sm text-foreground">
+                        <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
-                <h3 className="font-display font-bold text-xl md:text-2xl mb-3 text-foreground">
-                  {s.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  {s.description}
-                </p>
-                <ul className="space-y-2.5">
-                  {s.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2.5 text-sm text-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
