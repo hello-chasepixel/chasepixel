@@ -11,19 +11,20 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
+            <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">Get in touch</p>
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-6 text-foreground">
-              Let's make something
+              Let's make your work
               <br />
-              <span className="text-primary">you'll love.</span>
+              <span className="text-primary">impossible to ignore.</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-10 max-w-md mx-auto leading-relaxed">
-              Got a project in mind? Whether it's a quick question or a big idea, I'd love to chat.
+              Got a project in mind? Whether it's a quick question or a big idea, we'd love to chat.
             </p>
             <a
               href="mailto:hello@chasepixel.com"
-              className="inline-flex items-center gap-2 bg-foreground text-background font-semibold px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity text-sm group"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity text-sm group"
             >
-              Let's Talk
+              Book Your Free Consultation
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
