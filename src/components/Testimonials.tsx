@@ -30,13 +30,13 @@ const Testimonials = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-16 text-center"
         >
-          <p className="text-primary font-display font-medium tracking-widest uppercase text-sm mb-4">
-            Testimonials
+          <p className="text-primary font-display font-semibold tracking-wide text-sm mb-4">
+            Kind Words ✦
           </p>
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight">
-            Kind words.
+          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-foreground">
+            What people are saying.
           </h2>
         </motion.div>
 
@@ -44,18 +44,20 @@ const Testimonials = () => {
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-card border border-border rounded-lg p-8 flex flex-col"
+              className="bg-card border border-border rounded-2xl p-8 flex flex-col"
             >
-              <Quote className="w-8 h-8 text-primary/40 mb-6" />
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                <Quote className="w-5 h-5 text-primary" />
+              </div>
               <p className="text-foreground leading-relaxed flex-1 mb-6">
                 "{t.quote}"
               </p>
-              <div>
-                <p className="font-display font-semibold text-sm">{t.name}</p>
+              <div className="pt-4 border-t border-border">
+                <p className="font-display font-bold text-sm text-foreground">{t.name}</p>
                 <p className="text-muted-foreground text-sm">{t.role}</p>
               </div>
             </motion.div>
