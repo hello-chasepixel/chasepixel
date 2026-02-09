@@ -6,44 +6,44 @@
 
 @layer base {
   :root {
-    --background: 36 33% 97%;
-    --foreground: 25 20% 18%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
 
-    --card: 36 30% 94%;
-    --card-foreground: 25 20% 18%;
+    --card: 0 0% 97%;
+    --card-foreground: 0 0% 13%;
 
-    --popover: 36 33% 97%;
-    --popover-foreground: 25 20% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
 
-    --primary: 14 55% 58%;
-    --primary-foreground: 36 33% 97%;
+    --primary: 45 100% 51%;
+    --primary-foreground: 0 0% 13%;
 
-    --secondary: 42 40% 90%;
-    --secondary-foreground: 25 20% 18%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 13%;
 
-    --muted: 36 20% 92%;
-    --muted-foreground: 25 12% 50%;
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 145 25% 72%;
-    --accent-foreground: 25 20% 18%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 13%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 30 20% 88%;
-    --input: 30 20% 88%;
-    --ring: 14 55% 58%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 45 100% 51%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 36 30% 94%;
-    --sidebar-foreground: 25 20% 18%;
-    --sidebar-primary: 14 55% 58%;
-    --sidebar-primary-foreground: 36 33% 97%;
-    --sidebar-accent: 42 40% 90%;
-    --sidebar-accent-foreground: 25 20% 18%;
-    --sidebar-border: 30 20% 88%;
-    --sidebar-ring: 14 55% 58%;
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 0 0% 13%;
+    --sidebar-primary: 45 100% 51%;
+    --sidebar-primary-foreground: 0 0% 13%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 13%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 45 100% 51%;
   }
 }
 
@@ -63,6 +63,6 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[hsl(145,25%,55%)];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[hsl(45,100%,40%)];
   }
 }

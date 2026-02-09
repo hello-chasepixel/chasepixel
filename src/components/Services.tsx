@@ -1,107 +1,106 @@
 import { motion } from "framer-motion";
-import {
-  Palette,
-  FileText,
-  BarChart3,
-  Layout,
-  Share2,
-  Globe,
-} from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import portfolioReport from "@/assets/portfolio-report.jpg";
+import portfolioSlides from "@/assets/portfolio-slides.jpg";
+import portfolioBrochure from "@/assets/portfolio-brochure.jpg";
+import portfolioInfographic from "@/assets/portfolio-infographic.jpg";
 
 const services = [
   {
-    icon: Palette,
-    title: "Graphic Design",
+    image: portfolioReport,
+    title: "Transforming Complex Research into Accessible, Impactful Reports",
     description:
-      "Logos, brand materials, and visual goodies that make your brand feel like you.",
+      "Reports don't have to be dull. We transform complex data into clean, accessible, AODA-compliant documents that people actually want to read.",
+    bullets: [
+      "Accessible & AODA Compliant",
+      "Clear Visual Storytelling",
+      "Data Made Beautiful",
+      "Print & Digital-Ready Formats",
+      "Designed with Equity",
+    ],
   },
   {
-    icon: FileText,
-    title: "Report Design",
+    image: portfolioSlides,
+    title: "Designing Slide Decks That Tell a Clear and Impactful Story",
     description:
-      "Beautiful, AODA-compliant reports checked against a thorough accessibility checklist. Everyone deserves to read your work.",
+      "Bring your research, presentations, and pitches to life with clean, compelling design.",
+    bullets: [
+      "Visual storytelling that guides your audience",
+      "Complex ideas simplified through design",
+      "Branded templates for consistency and ease",
+      "Seamless integration of data and narrative",
+      "Ready-to-use formats for in-person or virtual delivery",
+    ],
   },
   {
-    icon: BarChart3,
-    title: "Infographic Design",
+    image: portfolioBrochure,
+    title: "Designing Flyers and Brochures with Purpose & Intention",
     description:
-      "Complex data turned into friendly, digestible visuals — because numbers deserve a glow-up.",
+      "We create inclusive, high-impact print and digital collateral that supports your message.",
+    bullets: [
+      "Built for both print distribution and digital sharing",
+      "Complex ideas simplified through design",
+      "Engaging visuals that support your message",
+      "Eye-catching layouts that capture attention fast",
+      "Ready-to-use formats for in-person or virtual delivery",
+    ],
   },
   {
-    icon: Layout,
-    title: "UI Design",
+    image: portfolioInfographic,
+    title: "Infographic Design That Makes Data Easy to Digest",
     description:
-      "Intuitive, accessible interfaces designed with real people in mind. No confusing menus, promise.",
-  },
-  {
-    icon: Share2,
-    title: "Social Media Design",
-    description:
-      "Thumb-stopping posts, stories, and carousels that make people pause mid-scroll.",
-  },
-  {
-    icon: Globe,
-    title: "Website Design",
-    description:
-      "Websites that look great, load fast, and actually make visitors want to stick around.",
+      "Turn complex stats and research into visual stories people actually understand.",
+    bullets: [
+      "Clear visual storytelling that highlights key takeaways",
+      "Simplifies complex data into digestible formats",
+      "Designed for accessibility and AODA compliance",
+      "Branded to align seamlessly with your organization",
+      "Optimized for use across print, web, and social media",
+    ],
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 25 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 const Services = () => {
   return (
-    <section id="services" className="py-24 md:py-32">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16 text-center"
-        >
-          <p className="text-primary font-display font-semibold tracking-wide text-sm mb-4">
-            What I Do ✦
-          </p>
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-foreground">
-            A little bit of everything,
-            <br />
-            done with a lot of care.
-          </h2>
-        </motion.div>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {services.map((s) => (
-            <motion.div
-              key={s.title}
-              variants={itemVariants}
-              className="group bg-card rounded-2xl p-8 border border-border hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
-                <s.icon className="w-6 h-6 text-primary" />
+    <section id="services" className="py-20 md:py-28">
+      <div className="container mx-auto px-6 space-y-12">
+        {services.map((s, i) => (
+          <motion.div
+            key={s.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.05 }}
+            className="bg-card border border-border rounded-2xl overflow-hidden"
+          >
+            <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-0`}>
+              <div className="md:w-2/5 aspect-[4/3] md:aspect-auto overflow-hidden">
+                <img
+                  src={s.image}
+                  alt={`Example of ${s.title}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
-              <h3 className="font-display font-bold text-lg mb-3 text-foreground">
-                {s.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {s.description}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+              <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+                <h3 className="font-display font-bold text-xl md:text-2xl mb-3 text-foreground">
+                  {s.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                  {s.description}
+                </p>
+                <ul className="space-y-2.5">
+                  {s.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-2.5 text-sm text-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

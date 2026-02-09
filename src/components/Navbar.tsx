@@ -3,9 +3,8 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
+  { label: "About Us", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -13,10 +12,10 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-6">
-        <a href="#" className="font-display text-xl font-bold tracking-tight text-foreground">
-          chase<span className="text-primary">pixel</span> ✦
+        <a href="#" className="font-display text-xl font-bold tracking-widest text-foreground uppercase">
+          Chase<span className="text-primary">pixel</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -29,12 +28,6 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            className="text-sm font-semibold bg-primary text-primary-foreground px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity"
-          >
-            Say Hello 👋
-          </a>
         </div>
 
         <button
@@ -65,13 +58,6 @@ const Navbar = () => {
                   {l.label}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setOpen(false)}
-                className="font-semibold bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-center hover:opacity-90 transition-opacity"
-              >
-                Say Hello 👋
-              </a>
             </div>
           </motion.div>
         )}
