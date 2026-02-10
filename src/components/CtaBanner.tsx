@@ -5,7 +5,7 @@ import FloatingLetter from "./FloatingLetter";
 
 const CtaBanner = () => {
   return (
-    <section className="py-4 px-6">
+    <section className="py-4 px-6 mb-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -20,14 +20,11 @@ const CtaBanner = () => {
           <LetterC />
         </FloatingLetter>
 
-        <h2 className="text-2xl md:text-4xl font-display font-extrabold text-secondary-foreground mb-4 relative z-10">
-          Ready to make your work
+        <h2 className="text-2xl md:text-4xl font-display font-extrabold text-secondary-foreground mb-8 relative z-10">
+          Ready to turn your work into a
           <br />
-          <span className="text-acid">impossible to ignore?</span>
+          <span className="text-acid">visually compelling material?</span>
         </h2>
-        <p className="text-secondary-foreground/60 mb-8 max-w-md mx-auto relative z-10">
-          No pressure. Just a conversation about your goals.
-        </p>
         <a
           href="#contact"
           className="relative z-10 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 transition-all text-sm group"
