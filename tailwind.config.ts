@@ -62,15 +62,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        sunshine: "hsl(49, 100%, 71%)",
+        acid: "hsl(66, 100%, 67%)",
         coral: "hsl(0, 100%, 76%)",
-        purple: {
-          DEFAULT: "hsl(271, 70%, 59%)",
-          dark: "hsl(271, 70%, 49%)",
+        violet: {
+          DEFAULT: "hsl(271, 75%, 35%)",
+          light: "hsl(271, 70%, 59%)",
         },
         navy: {
-          DEFAULT: "hsl(240, 27%, 14%)",
-          light: "hsl(222, 48%, 16%)",
+          DEFAULT: "hsl(233, 58%, 10%)",
+          light: "hsl(233, 40%, 18%)",
         },
       },
       borderRadius: {
