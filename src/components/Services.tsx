@@ -2,7 +2,17 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { LetterE, LetterA } from "./Logo";
 import FloatingLetter from "./FloatingLetter";
-import reportMockup from "@/assets/report-mockup.png";
+import reportPage1 from "@/assets/report-page-1.png";
+import reportPage2 from "@/assets/report-page-2.png";
+import reportPage3 from "@/assets/report-page-3.png";
+import reportPage4 from "@/assets/report-page-4.png";
+
+const reportImages = [
+  { src: reportPage3, alt: "Report preface page", rotate: -8, y: 0 },
+  { src: reportPage4, alt: "Report recommendations page", rotate: -3, y: 0 },
+  { src: reportPage1, alt: "Report inclusion model page", rotate: 3, y: 0 },
+  { src: reportPage2, alt: "Report services model page", rotate: 7, y: 0 },
+];
 
 const services = [
   {
@@ -16,7 +26,7 @@ const services = [
       "Branded templates you can reuse for future reports",
     ],
     accent: "primary" as const,
-    image: reportMockup,
+    hasImages: true,
   },
   {
     title: "Slide decks that tell stories, not just list facts",
@@ -139,17 +149,26 @@ const Services = () => {
                       </a>
                     </div>
                   </div>
-                  {'image' in s && (
-                    <div className="md:w-1/2 flex items-center justify-center p-6 md:p-8">
-                      <motion.img
-                        src={(s as any).image}
-                        alt="Report design mockup showcasing multiple report pages"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="w-full rounded-lg"
-                      />
+                  {'hasImages' in s && (
+                    <div className="md:w-1/2 flex items-center justify-center p-6 md:p-12">
+                      <div className="relative w-72 h-64 md:w-80 md:h-72 mx-auto">
+                        {reportImages.map((img, idx) => (
+                          <motion.img
+                            key={idx}
+                            src={img.src}
+                            alt={img.alt}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: idx * 0.1 }}
+                            className="absolute left-1/2 top-1/2 w-[75%] rounded-lg shadow-2xl border border-border/20"
+                            style={{
+                              transform: `translate(-50%, -50%) rotate(${img.rotate}deg)`,
+                              zIndex: idx,
+                            }}
+                          />
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
