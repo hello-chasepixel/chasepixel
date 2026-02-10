@@ -26,13 +26,13 @@ const testimonials = [
   },
   {
     quote: "I had the pleasure of working with Natasha on several projects, and I am beyond impressed with the results. She designed reports that were not only visually stunning but also accessible and AODA compliant. Her attention to detail and dedication to perfection were evident in every aspect of her work. Additionally, she communicated effectively throughout the entire process and always delivered her work in a timely manner. I highly recommend Natasha for your design needs!",
-    name: "Anonymous",
-    role: "",
+    name: "Seema Taneja",
+    role: "Founder, Taneja Consulting Inc.",
   },
   {
     quote: "Natasha is one of the best in the game. From quality, to creativeness, to delivering work ahead of timelines - she processed our content efficiently and produced results with very few iterations. I cannot recommend her company enough. I'm always happy to be a referral for anyone who is considering hiring her on a project, or recurring basis.",
-    name: "Anonymous",
-    role: "",
+    name: "Sarah-Almaza Cox",
+    role: "Women's Health Co-founder and Consultant",
   },
 ];
 
