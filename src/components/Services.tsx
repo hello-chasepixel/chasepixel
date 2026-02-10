@@ -92,7 +92,7 @@ const Services = () => {
             <span className="text-primary"> feel effortless</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            We partner with consultants and organizations ready to transform their text-heavy work into visually compelling materials that get read, shared, and acted upon.
+            We partner with consultants and organizations ready to transform their text-heavy work into visually compelling materials that get read and shared.
           </p>
         </motion.div>
 
