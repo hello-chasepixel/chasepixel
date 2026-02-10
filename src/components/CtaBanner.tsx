@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { LetterX, LetterC } from "./Logo";
+import FloatingLetter from "./FloatingLetter";
 
 const CtaBanner = () => {
   return (
@@ -11,13 +12,13 @@ const CtaBanner = () => {
         viewport={{ once: true }}
         className="container mx-auto bg-secondary rounded-2xl py-14 md:py-20 px-8 text-center relative overflow-hidden"
       >
-        {/* Letter-shaped decorations on dark bg */}
-        <div className="absolute top-4 left-6 w-16 h-16 text-primary/[0.08] rotate-12">
+        {/* Floating letter decorations */}
+        <FloatingLetter className="top-4 left-6 w-16 h-16 text-primary/[0.1]" glow="primary" duration={10} delay={0} distance={8}>
           <LetterX />
-        </div>
-        <div className="absolute bottom-6 right-10 w-20 h-20 text-accent/[0.1] -rotate-6">
+        </FloatingLetter>
+        <FloatingLetter className="bottom-6 right-10 w-20 h-20 text-accent/[0.12]" glow="accent" duration={12} delay={2} distance={10}>
           <LetterC />
-        </div>
+        </FloatingLetter>
 
         <h2 className="text-2xl md:text-4xl font-display font-extrabold text-secondary-foreground mb-4 relative z-10">
           Ready to make your work

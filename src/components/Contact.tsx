@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
 import { LetterA, LetterX } from "./Logo";
+import FloatingLetter from "./FloatingLetter";
 
 const Contact = () => {
   return (
     <section id="contact" className="py-20 md:py-28 relative overflow-hidden">
-      {/* Letter-shaped decorations */}
-      <div className="absolute top-12 left-[6%] w-24 h-24 text-primary/[0.05] rotate-6">
+      {/* Floating letter decorations */}
+      <FloatingLetter className="top-12 left-[6%] w-24 h-24 text-primary/[0.06]" glow="primary" duration={10} delay={2}>
         <LetterA />
-      </div>
-      <div className="absolute bottom-16 right-[8%] w-20 h-20 text-accent/[0.06] -rotate-12">
+      </FloatingLetter>
+      <FloatingLetter className="bottom-16 right-[8%] w-20 h-20 text-accent/[0.08]" glow="accent" duration={12} delay={0}>
         <LetterX />
-      </div>
+      </FloatingLetter>
 
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">

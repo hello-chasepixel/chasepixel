@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { LetterE, LetterA } from "./Logo";
+import FloatingLetter from "./FloatingLetter";
 import portfolioReport from "@/assets/portfolio-report.jpg";
 import portfolioSlides from "@/assets/portfolio-slides.jpg";
 import portfolioBrochure from "@/assets/portfolio-brochure.jpg";
@@ -67,27 +68,25 @@ const accentStyles = {
     glow: "hover:shadow-primary/10",
     strip: "bg-primary",
     check: "text-primary",
-    tag: "bg-primary/10 text-primary",
   },
   accent: {
     border: "hover:border-accent/40",
     glow: "hover:shadow-accent/10",
     strip: "bg-accent",
     check: "text-accent",
-    tag: "bg-accent/10 text-accent",
   },
 };
 
 const Services = () => {
   return (
     <section id="services" className="py-20 md:py-28 relative overflow-hidden">
-      {/* Letter-shaped decorative elements */}
-      <div className="absolute top-16 left-[-2%] w-32 h-32 text-primary/[0.04] rotate-12">
+      {/* Floating letter decorations */}
+      <FloatingLetter className="top-16 left-[-2%] w-32 h-32 text-primary/[0.05]" glow="primary" duration={14} delay={1}>
         <LetterE />
-      </div>
-      <div className="absolute bottom-24 right-[-1%] w-28 h-28 text-accent/[0.06] -rotate-6">
+      </FloatingLetter>
+      <FloatingLetter className="bottom-24 right-[-1%] w-28 h-28 text-accent/[0.07]" glow="accent" duration={12} delay={3}>
         <LetterA />
-      </div>
+      </FloatingLetter>
 
       <div className="container mx-auto px-6">
         <motion.div
@@ -119,11 +118,8 @@ const Services = () => {
                 transition={{ duration: 0.5, delay: i * 0.05 }}
                 className={`group relative bg-card border border-border rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl ${styles.border} ${styles.glow}`}
               >
-                {/* Top accent strip */}
                 <div className={`h-1 w-full ${styles.strip}`} />
-
                 <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                  {/* Image side */}
                   <div className="md:w-2/5 aspect-[4/3] md:aspect-auto overflow-hidden relative">
                     <img
                       src={s.image}
@@ -131,11 +127,7 @@ const Services = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                     />
-                    {/* Gradient overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-${i % 2 === 0 ? "r" : "l"} from-transparent to-card/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                   </div>
-
-                  {/* Content side */}
                   <div className="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
                     <h3 className="font-display font-extrabold text-xl md:text-2xl mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
                       {s.title}
