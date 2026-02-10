@@ -5,6 +5,7 @@ import FloatingLetter from "./FloatingLetter";
 import reportsCollage from "@/assets/reports-collage.png";
 import slidesCollage from "@/assets/slides-collage.png";
 import brochureCollage from "@/assets/brochure-collage.png";
+import infographicsCollage from "@/assets/infographics-collage.png";
 const services = [{
   title: "Research reports that people actually want to read",
   description: "Your 50-page report took months to research. We make sure your stakeholders don't just skim the executive summary — they engage with every finding.",
@@ -27,7 +28,8 @@ const services = [{
   title: "Complex data, instantly understood",
   description: "Turn dense research and statistics into visual stories that any audience can grasp at a glance.",
   bullets: ["Clear visual storytelling that highlights key takeaways", "Simplifies complex data into digestible formats", "Designed for accessibility and AODA compliance", "Optimized for use across print, web, and social media"],
-  accent: "accent" as const
+  accent: "accent" as const,
+  image: infographicsCollage
 }];
 const accentStyles = {
   primary: {
