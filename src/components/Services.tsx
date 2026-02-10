@@ -127,24 +127,29 @@ const Services = () => {
                 <div className="flex flex-col">
                   {/* Stacked report images inside the first card */}
                   {'hasImages' in s && (
-                    <div className="relative w-full h-56 md:h-72 overflow-hidden bg-background/50 flex items-center justify-center">
+                    <div className="relative w-full h-64 md:h-80 overflow-hidden bg-background/50 flex items-center justify-center" style={{ perspective: '1200px' }}>
                       {reportImages.map((img, idx) => (
-                        <motion.img
+                        <motion.div
                           key={idx}
-                          src={img.src}
-                          alt={img.alt}
-                          initial={{ opacity: 0, y: 30 }}
-                          whileInView={{
-                            opacity: 1,
-                            y: 0,
-                            rotate: [-12, -4, 5, 2][idx],
-                            x: [-65, -20, 25, 60][idx],
-                          }}
+                          initial={{ opacity: 0, y: 40 }}
+                          whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: idx * 0.1 }}
-                          className="absolute w-[45%] rounded-lg shadow-2xl border border-border/20"
-                          style={{ zIndex: idx }}
-                        />
+                          transition={{ duration: 0.5, delay: idx * 0.12 }}
+                          className="absolute w-[42%]"
+                          style={{
+                            zIndex: idx,
+                            transform: `translateX(${[-65, -20, 25, 60][idx]}px) rotateY(${[15, 8, -8, -15][idx]}deg) rotateZ(${[-6, -2, 2, 1][idx]}deg)`,
+                          }}
+                        >
+                          <img
+                            src={img.src}
+                            alt={img.alt}
+                            className="w-full rounded-sm"
+                            style={{
+                              boxShadow: '4px 8px 24px rgba(0,0,0,0.4), 1px 2px 8px rgba(0,0,0,0.2)',
+                            }}
+                          />
+                        </motion.div>
                       ))}
                     </div>
                   )}
