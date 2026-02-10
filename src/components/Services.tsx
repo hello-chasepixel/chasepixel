@@ -2,17 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { LetterE, LetterA } from "./Logo";
 import FloatingLetter from "./FloatingLetter";
-import reportPage1 from "@/assets/report-page-1.png";
-import reportPage2 from "@/assets/report-page-2.png";
-import reportPage3 from "@/assets/report-page-3.png";
-import reportPage4 from "@/assets/report-page-4.png";
-
-const reportImages = [
-  { src: reportPage4, alt: "Report recommendations page" },
-  { src: reportPage1, alt: "Report inclusion model page" },
-  { src: reportPage2, alt: "Report services model page" },
-  { src: reportPage3, alt: "Report preface page" },
-];
+import reportsCollage from "@/assets/reports-collage.png";
 
 const services = [
   {
@@ -127,30 +117,16 @@ const Services = () => {
                 <div className="flex flex-col">
                   {/* Stacked report images inside the first card */}
                   {'hasImages' in s && (
-                    <div className="relative w-full h-64 md:h-80 overflow-hidden bg-background/50 flex items-center justify-center" style={{ perspective: '1200px' }}>
-                      {reportImages.map((img, idx) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ opacity: 0, y: 40 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: idx * 0.12 }}
-                          className="absolute w-[42%]"
-                          style={{
-                            zIndex: idx,
-                            transform: `translateX(${[-65, -20, 25, 60][idx]}px) rotateY(${[15, 8, -8, -15][idx]}deg) rotateZ(${[-6, -2, 2, 1][idx]}deg)`,
-                          }}
-                        >
-                          <img
-                            src={img.src}
-                            alt={img.alt}
-                            className="w-full rounded-sm"
-                            style={{
-                              boxShadow: '4px 8px 24px rgba(0,0,0,0.4), 1px 2px 8px rgba(0,0,0,0.2)',
-                            }}
-                          />
-                        </motion.div>
-                      ))}
+                    <div className="w-full overflow-hidden bg-background/50 flex items-center justify-center p-4 md:p-6">
+                      <motion.img
+                        src={reportsCollage}
+                        alt="Research reports collage showcasing various report designs"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="w-full rounded-md"
+                      />
                     </div>
                   )}
                   <div className="p-6 md:p-8 flex flex-col justify-center">
