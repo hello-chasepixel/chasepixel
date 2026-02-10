@@ -4,6 +4,7 @@ import { LetterE, LetterA } from "./Logo";
 import FloatingLetter from "./FloatingLetter";
 import reportsCollage from "@/assets/reports-collage.png";
 import slidesCollage from "@/assets/slides-collage.png";
+import brochureCollage from "@/assets/brochure-collage.png";
 const services = [{
   title: "Research reports that people actually want to read",
   description: "Your 50-page report took months to research. We make sure your stakeholders don't just skim the executive summary — they engage with every finding.",
@@ -20,7 +21,8 @@ const services = [{
   title: "Flyers and brochures designed with purpose",
   description: "We create inclusive, high-impact print and digital collateral that ensures your message gets the attention it deserves.",
   bullets: ["Built for both print distribution and digital sharing", "Eye-catching layouts that capture attention fast", "Engaging visuals that support your message", "Accessible and inclusive by design"],
-  accent: "primary" as const
+  accent: "primary" as const,
+  image: brochureCollage
 }, {
   title: "Complex data, instantly understood",
   description: "Turn dense research and statistics into visual stories that any audience can grasp at a glance.",
