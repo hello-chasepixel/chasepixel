@@ -8,10 +8,10 @@ import reportPage3 from "@/assets/report-page-3.png";
 import reportPage4 from "@/assets/report-page-4.png";
 
 const reportImages = [
-  { src: reportPage3, alt: "Report preface page", rotate: -8, y: 0 },
-  { src: reportPage4, alt: "Report recommendations page", rotate: -3, y: 0 },
-  { src: reportPage1, alt: "Report inclusion model page", rotate: 3, y: 0 },
-  { src: reportPage2, alt: "Report services model page", rotate: 7, y: 0 },
+  { src: reportPage3, alt: "Report preface page", rotate: -8, offsetX: -20, offsetY: -15 },
+  { src: reportPage4, alt: "Report recommendations page", rotate: -3, offsetX: -8, offsetY: -5 },
+  { src: reportPage1, alt: "Report inclusion model page", rotate: 3, offsetX: 8, offsetY: 5 },
+  { src: reportPage2, alt: "Report services model page", rotate: 7, offsetX: 20, offsetY: 15 },
 ];
 
 const services = [
@@ -161,9 +161,9 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
-                            className="absolute left-1/2 top-1/2 w-[75%] rounded-lg shadow-2xl border border-border/20"
+                            className="absolute left-1/2 top-1/2 w-[70%] rounded-lg shadow-2xl border border-border/20"
                             style={{
-                              transform: `translate(-50%, -50%) rotate(${img.rotate}deg)`,
+                              transform: `translate(calc(-50% + ${img.offsetX}px), calc(-50% + ${img.offsetY}px)) rotate(${img.rotate}deg)`,
                               zIndex: idx,
                             }}
                           />
