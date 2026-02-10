@@ -118,9 +118,17 @@ const Services = () => {
                 }} loading="eager" src={s.image} />
                     </div>}
                   <div className="p-6 md:p-8 flex flex-col justify-center">
-                    <h3 className="font-display font-extrabold text-lg md:text-xl mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
-                      {s.title}
-                    </h3>
+                    {(() => {
+                      const words = s.title.split(' ');
+                      const bigPart = words.slice(0, 2).join(' ');
+                      const rest = words.slice(2).join(' ');
+                      return (
+                        <h3 className="font-display font-extrabold mb-3">
+                          <span className="block text-xl md:text-2xl text-primary">{bigPart}</span>
+                          {rest && <span className="block text-lg md:text-xl text-foreground">{rest}</span>}
+                        </h3>
+                      );
+                    })()}
                     <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                       {s.description}
                     </p>
