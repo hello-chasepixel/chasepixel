@@ -1,18 +1,19 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { LetterP, LetterE } from "./Logo";
+import FloatingLetter from "./FloatingLetter";
 import portfolioWebsite from "@/assets/portfolio-website.jpg";
 
 const Testimonials = () => {
   return (
     <section id="about" className="py-20 md:py-28 bg-card relative overflow-hidden">
-      {/* Letter-shaped decorations */}
-      <div className="absolute top-10 right-8 w-24 h-24 text-primary/[0.05] rotate-12">
+      {/* Floating letter decorations */}
+      <FloatingLetter className="top-10 right-8 w-24 h-24 text-primary/[0.06]" glow="primary" duration={11} delay={1}>
         <LetterP />
-      </div>
-      <div className="absolute bottom-12 left-6 w-20 h-20 text-accent/[0.06] -rotate-6">
+      </FloatingLetter>
+      <FloatingLetter className="bottom-12 left-6 w-20 h-20 text-accent/[0.08]" glow="accent" duration={13} delay={4}>
         <LetterE />
-      </div>
+      </FloatingLetter>
 
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row gap-12 items-center">

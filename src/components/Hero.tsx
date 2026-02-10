@@ -1,27 +1,36 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { LetterC, LetterX, LetterP, LetterA } from "./Logo";
+import FloatingLetter from "./FloatingLetter";
 
 const Hero = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center pt-16 bg-background overflow-hidden">
-      {/* Letter-shaped decorative elements */}
-      <div className="absolute top-24 right-[6%] w-28 h-28 text-primary/[0.06] rotate-12">
+      {/* Floating letter-shaped decorations with glow */}
+      <FloatingLetter className="top-24 right-[6%] w-28 h-28 text-primary/[0.08]" glow="primary" duration={10} delay={0}>
         <LetterX />
-      </div>
-      <div className="absolute bottom-[18%] left-[4%] w-36 h-36 text-primary/[0.05] -rotate-12">
+      </FloatingLetter>
+      <FloatingLetter className="bottom-[18%] left-[4%] w-36 h-36 text-primary/[0.06]" glow="primary" duration={12} delay={2}>
         <LetterC />
-      </div>
-      <div className="absolute top-[35%] left-[12%] w-20 h-20 text-accent/[0.08] rotate-6">
+      </FloatingLetter>
+      <FloatingLetter className="top-[35%] left-[12%] w-20 h-20 text-accent/[0.1]" glow="accent" duration={9} delay={1}>
         <LetterA />
-      </div>
-      <div className="absolute bottom-32 right-[15%] w-24 h-24 text-accent/[0.06] -rotate-6">
+      </FloatingLetter>
+      <FloatingLetter className="bottom-32 right-[15%] w-24 h-24 text-accent/[0.08]" glow="accent" duration={11} delay={3}>
         <LetterP />
-      </div>
+      </FloatingLetter>
 
       {/* Soft color blurs */}
-      <div className="absolute top-20 right-[-5%] w-72 h-72 bg-primary/8 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 left-[-5%] w-56 h-56 bg-accent/8 rounded-full blur-3xl" />
+      <motion.div
+        className="absolute top-20 right-[-5%] w-72 h-72 bg-primary/8 rounded-full blur-3xl"
+        animate={{ scale: [1, 1.1, 1], opacity: [0.08, 0.12, 0.08] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-10 left-[-5%] w-56 h-56 bg-accent/8 rounded-full blur-3xl"
+        animate={{ scale: [1, 1.15, 1], opacity: [0.08, 0.14, 0.08] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
 
       <div className="container mx-auto px-6 relative z-10 py-20">
         <div className="max-w-3xl mx-auto text-center">
