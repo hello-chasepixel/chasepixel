@@ -1,11 +1,34 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { LetterA, LetterX } from "./Logo";
 import FloatingLetter from "./FloatingLetter";
 
 const Contact = () => {
+  useEffect(() => {
+    const d = document;
+    const w = "https://tally.so/widgets/embed.js";
+    const v = function () {
+      if (typeof (window as any).Tally !== "undefined") {
+        (window as any).Tally.loadEmbeds();
+      } else {
+        d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((e: any) => {
+          e.src = e.dataset.tallySrc;
+        });
+      }
+    };
+    if (typeof (window as any).Tally !== "undefined") {
+      v();
+    } else if (d.querySelector('script[src="' + w + '"]') == null) {
+      const s = d.createElement("script");
+      s.src = w;
+      s.onload = v;
+      s.onerror = v;
+      d.body.appendChild(s);
+    }
+  }, []);
+
   return (
     <section id="contact" className="py-20 md:py-28 relative overflow-hidden">
-      {/* Floating letter decorations */}
       <FloatingLetter className="top-12 left-[6%] w-24 h-24 text-primary/[0.06]" glow="primary" duration={10} delay={2}>
         <LetterA />
       </FloatingLetter>
@@ -36,12 +59,11 @@ const Contact = () => {
             data-tally-src="https://tally.so/embed/QK5Bep?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
             loading="lazy"
             width="100%"
-            height="500"
+            height={313}
             frameBorder="0"
             marginHeight={0}
             marginWidth={0}
-            title="Contact Form"
-            style={{ border: 'none' }}
+            title="Contact Us"
           />
         </div>
       </div>
