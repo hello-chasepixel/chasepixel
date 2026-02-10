@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
 import { LetterA, LetterX } from "./Logo";
 import FloatingLetter from "./FloatingLetter";
 
@@ -15,7 +14,7 @@ const Contact = () => {
       </FloatingLetter>
 
       <div className="container mx-auto px-6">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-2xl mx-auto text-center mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -27,18 +26,23 @@ const Contact = () => {
               <br />
               <span className="text-primary">visually compelling.</span>
             </h2>
-            <p className="text-muted-foreground text-lg mb-10 max-w-md mx-auto leading-relaxed">
+            <p className="text-muted-foreground text-lg max-w-md mx-auto leading-relaxed">
               Got a project in mind? Whether it's a quick question or a big idea, we'd love to chat.
             </p>
-            <a
-              href="mailto:hello@chasepixel.com"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all text-sm group"
-            >
-              <Mail className="w-4 h-4" />
-              Book Your Free Consultation
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
           </motion.div>
+        </div>
+        <div className="max-w-2xl mx-auto">
+          <iframe
+            data-tally-src="https://tally.so/embed/QK5Bep?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="500"
+            frameBorder="0"
+            marginHeight={0}
+            marginWidth={0}
+            title="Contact Form"
+            style={{ border: 'none' }}
+          />
         </div>
       </div>
     </section>
