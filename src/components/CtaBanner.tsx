@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { LetterX, LetterC } from "./Logo";
 
 const CtaBanner = () => {
   return (
@@ -10,11 +11,13 @@ const CtaBanner = () => {
         viewport={{ once: true }}
         className="container mx-auto bg-secondary rounded-2xl py-14 md:py-20 px-8 text-center relative overflow-hidden"
       >
-        {/* Geometric decorations on dark bg */}
-        <div className="absolute top-6 left-8 w-12 h-12 border-2 border-primary/20 rounded-full" />
-        <div className="absolute bottom-8 right-12 w-8 h-8 bg-accent/15 rotate-45" />
-        <div className="absolute top-1/2 left-[5%] w-3 h-3 bg-primary/30 rounded-full" />
-        <div className="absolute top-[30%] right-[8%] w-2 h-2 bg-accent/40 rounded-full" />
+        {/* Letter-shaped decorations on dark bg */}
+        <div className="absolute top-4 left-6 w-16 h-16 text-primary/[0.08] rotate-12">
+          <LetterX />
+        </div>
+        <div className="absolute bottom-6 right-10 w-20 h-20 text-accent/[0.1] -rotate-6">
+          <LetterC />
+        </div>
 
         <h2 className="text-2xl md:text-4xl font-display font-extrabold text-secondary-foreground mb-4 relative z-10">
           Ready to make your work

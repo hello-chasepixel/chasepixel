@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import { LetterE, LetterA } from "./Logo";
 import portfolioReport from "@/assets/portfolio-report.jpg";
 import portfolioSlides from "@/assets/portfolio-slides.jpg";
 import portfolioBrochure from "@/assets/portfolio-brochure.jpg";
@@ -63,9 +64,13 @@ const services = [
 const Services = () => {
   return (
     <section id="services" className="py-20 md:py-28 relative overflow-hidden">
-      {/* Decorative background shapes */}
-      <div className="absolute top-20 left-[-5%] w-48 h-48 bg-accent/5 rounded-full blur-2xl" />
-      <div className="absolute bottom-40 right-[-3%] w-36 h-36 bg-primary/5 rounded-full blur-2xl" />
+      {/* Letter-shaped decorative elements */}
+      <div className="absolute top-16 left-[-2%] w-32 h-32 text-primary/[0.04] rotate-12">
+        <LetterE />
+      </div>
+      <div className="absolute bottom-24 right-[-1%] w-28 h-28 text-accent/[0.06] -rotate-6">
+        <LetterA />
+      </div>
 
       <div className="container mx-auto px-6">
         <motion.div
@@ -100,7 +105,6 @@ const Services = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  {/* Color accent strip */}
                   <div className={`absolute ${i % 2 === 0 ? "right-0 top-0 w-1 h-full" : "left-0 top-0 w-1 h-full"} ${s.accentColor} hidden md:block`} />
                 </div>
                 <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "./Logo";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -14,8 +15,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-6">
-        <a href="#" className="font-display text-xl font-extrabold tracking-wide text-foreground">
-          chase<span className="text-primary">pixel</span>
+        <a href="#" className="block">
+          <Logo className="h-5 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
