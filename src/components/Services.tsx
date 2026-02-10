@@ -8,10 +8,10 @@ import reportPage3 from "@/assets/report-page-3.png";
 import reportPage4 from "@/assets/report-page-4.png";
 
 const reportImages = [
-  { src: reportPage3, alt: "Report preface page" },
   { src: reportPage4, alt: "Report recommendations page" },
   { src: reportPage1, alt: "Report inclusion model page" },
   { src: reportPage2, alt: "Report services model page" },
+  { src: reportPage3, alt: "Report preface page" },
 ];
 
 const services = [
@@ -137,8 +137,8 @@ const Services = () => {
                           whileInView={{
                             opacity: 1,
                             y: 0,
-                            rotate: [-8, -3, 3, 8][idx],
-                            x: [-40, -12, 16, 44][idx],
+                            rotate: [-12, -4, 5, 2][idx],
+                            x: [-65, -20, 25, 60][idx],
                           }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.5, delay: idx * 0.1 }}
