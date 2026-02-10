@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { LetterE, LetterA } from "./Logo";
 import FloatingLetter from "./FloatingLetter";
+import reportMockup from "@/assets/report-mockup.png";
 
 const services = [
   {
@@ -15,6 +16,7 @@ const services = [
       "Branded templates you can reuse for future reports",
     ],
     accent: "primary" as const,
+    image: reportMockup,
   },
   {
     title: "Slide decks that tell stories, not just list facts",
@@ -111,8 +113,8 @@ const Services = () => {
                 className={`group relative bg-card border border-border rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl ${styles.border} ${styles.glow}`}
               >
                 <div className={`h-1 w-full ${styles.strip}`} />
-                <div className="flex flex-col">
-                  <div className="p-8 md:p-12 flex flex-col justify-center">
+                <div className={`flex flex-col ${'image' in s ? 'md:flex-row' : ''}`}>
+                  <div className={`p-8 md:p-12 flex flex-col justify-center ${'image' in s ? 'md:w-1/2' : ''}`}>
                     <h3 className="font-display font-extrabold text-xl md:text-2xl mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
                       {s.title}
                     </h3>
@@ -137,6 +139,19 @@ const Services = () => {
                       </a>
                     </div>
                   </div>
+                  {'image' in s && (
+                    <div className="md:w-1/2 flex items-center justify-center p-6 md:p-8">
+                      <motion.img
+                        src={(s as any).image}
+                        alt="Report design mockup showcasing multiple report pages"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="w-full rounded-lg"
+                      />
+                    </div>
+                  )}
                 </div>
               </motion.div>
             );
