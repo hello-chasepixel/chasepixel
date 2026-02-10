@@ -7,6 +7,7 @@ import slidesCollage from "@/assets/slides-collage.png";
 import brochureCollage from "@/assets/brochure-collage.png";
 import infographicsCollage from "@/assets/infographics-collage.png";
 import illustrationsCollage from "@/assets/illustrations-collage.png";
+import websitesCollage from "@/assets/websites-collage.png";
 const services = [{
   titleBig: "Reports",
   titleSmall: "that people actually want to read",
@@ -42,6 +43,13 @@ const services = [{
   bullets: ["Tailored visuals that reflect your community and context", "Humanizes complex data with relatable imagery", "Consistent style across all your materials", "Inclusive, culturally sensitive representation by design"],
   accent: "primary" as const,
   image: illustrationsCollage
+}, {
+  titleBig: "Websites",
+  titleSmall: "that work as hard as you do",
+  description: "Your website is often the first impression. We design responsive, accessible sites that clearly communicate your mission and convert visitors into supporters.",
+  bullets: ["Responsive design that looks great on every device", "Accessibility-first approach meeting WCAG standards", "SEO-optimized structure for maximum visibility", "Easy-to-manage CMS integration for ongoing updates"],
+  accent: "accent" as const,
+  image: websitesCollage
 }];
 const accentStyles = {
   primary: {
