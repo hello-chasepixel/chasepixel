@@ -23,9 +23,9 @@ const Contact = () => {
           >
             <p className="text-sm font-bold tracking-widest uppercase text-accent mb-3">Get in touch</p>
             <h2 className="text-3xl md:text-5xl font-display font-extrabold tracking-tight mb-6 text-foreground">
-              Let's make your work
+              Let's make your brilliant work
               <br />
-              <span className="text-primary">impossible to ignore.</span>
+              <span className="text-primary">visually compelling.</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-10 max-w-md mx-auto leading-relaxed">
               Got a project in mind? Whether it's a quick question or a big idea, we'd love to chat.
