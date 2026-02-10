@@ -38,9 +38,9 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 bg-acid/15 text-foreground font-semibold text-sm tracking-wide uppercase px-5 py-2 rounded-full mb-8"
+            className="inline-flex items-center gap-2 bg-primary/15 text-primary font-semibold text-sm tracking-wide uppercase px-5 py-2 rounded-full mb-8 border border-primary/20"
           >
-            <span className="w-2 h-2 bg-acid rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             Design that drives impact
           </motion.div>
 
@@ -80,17 +80,11 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
-              href="#contact"
+              href="#services"
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all text-sm group"
             >
-              Book Your Free Strategy Session
+              See Our Services
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#services"
-              className="inline-flex items-center justify-center gap-2 text-foreground font-semibold px-8 py-4 rounded-full border-2 border-border hover:border-accent hover:text-accent transition-colors text-sm"
-            >
-              See Our Work
             </a>
           </motion.div>
         </div>
