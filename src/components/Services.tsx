@@ -47,7 +47,7 @@ const services = [{
   titleBig: "Websites",
   titleSmall: "that work as hard as you do",
   description: "Your website is often the first impression. We design responsive, accessible sites that clearly communicate your mission and convert visitors into supporters.",
-  bullets: ["Responsive design that looks great on every device", "Accessibility-first approach meeting WCAG standards", "SEO-optimized structure for maximum visibility", "Easy-to-manage CMS integration for ongoing updates"],
+  bullets: ["Responsive design that looks great on every device", "Accessibility-first approach for all users", "SEO-optimized structure for maximum visibility", "Easy-to-manage CMS integration for ongoing updates"],
   accent: "accent" as const,
   image: websitesCollage
 }];
