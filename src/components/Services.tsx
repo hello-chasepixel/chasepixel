@@ -3,17 +3,19 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import { LetterE, LetterA } from "./Logo";
 import FloatingLetter from "./FloatingLetter";
 import reportsCollage from "@/assets/reports-collage.png";
+import slidesCollage from "@/assets/slides-collage.png";
 const services = [{
   title: "Research reports that people actually want to read",
   description: "Your 50-page report took months to research. We make sure your stakeholders don't just skim the executive summary — they engage with every finding.",
   bullets: ["AODA-compliant & accessible to all readers", "Clear visual hierarchy that guides through complex findings", "Data visualizations that make statistics instantly clear", "Branded templates you can reuse for future reports"],
   accent: "primary" as const,
-  hasImages: true
+  image: reportsCollage
 }, {
   title: "Slide decks that tell stories, not just list facts",
   description: "You've got 20 minutes to convince funders or stakeholders. We design presentations that guide your audience through a clear, persuasive narrative.",
   bullets: ["One key idea per slide — no more walls of text", "Data visualizations that support your story", "Consistent branding that looks polished and professional", "Both presentation and handout versions included"],
-  accent: "accent" as const
+  accent: "accent" as const,
+  image: slidesCollage
 }, {
   title: "Flyers and brochures designed with purpose",
   description: "We create inclusive, high-impact print and digital collateral that ensures your message gets the attention it deserves.",
@@ -89,8 +91,8 @@ const Services = () => {
                 <div className={`h-1 w-full ${styles.strip}`} />
                 <div className="flex flex-col">
                   {/* Stacked report images inside the first card */}
-                  {'hasImages' in s && <div className="w-full overflow-hidden bg-background/50 flex items-center justify-center p-4 md:p-6">
-                      <motion.img alt="Research reports collage showcasing various report designs" initial={{
+                  {s.image && <div className="w-full overflow-hidden bg-background/50 flex items-center justify-center p-4 md:p-6">
+                      <motion.img alt={`${s.title} showcase`} initial={{
                   opacity: 0,
                   y: 20
                 }} whileInView={{
@@ -102,7 +104,7 @@ const Services = () => {
                   duration: 0.5
                 }} className="w-full rounded-md" style={{
                   imageRendering: 'auto'
-                }} loading="eager" src="/lovable-uploads/0d2672cf-fa73-4f65-8132-e4aeca317542.png" />
+                }} loading="eager" src={s.image} />
                     </div>}
                   <div className="p-6 md:p-8 flex flex-col justify-center">
                     <h3 className="font-display font-extrabold text-lg md:text-xl mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
