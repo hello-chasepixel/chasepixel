@@ -2,6 +2,17 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { LetterE, LetterA } from "./Logo";
 import FloatingLetter from "./FloatingLetter";
+import reportPage1 from "@/assets/report-page-1.png";
+import reportPage2 from "@/assets/report-page-2.png";
+import reportPage3 from "@/assets/report-page-3.png";
+import reportPage4 from "@/assets/report-page-4.png";
+
+const reportImages = [
+  { src: reportPage3, alt: "Report preface page", rotate: -6, x: 0, y: 0, z: 1 },
+  { src: reportPage4, alt: "Report recommendations page", rotate: -2, x: 60, y: 20, z: 2 },
+  { src: reportPage1, alt: "Report inclusion model page", rotate: 3, x: 120, y: -10, z: 3 },
+  { src: reportPage2, alt: "Report services model page", rotate: 7, x: 180, y: 15, z: 4 },
+];
 
 const services = [
   {
@@ -15,6 +26,7 @@ const services = [
       "Branded templates you can reuse for future reports",
     ],
     accent: "primary" as const,
+    hasImages: true,
   },
   {
     title: "Slide decks that tell stories, not just list facts",
@@ -111,8 +123,8 @@ const Services = () => {
                 className={`group relative bg-card border border-border rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl ${styles.border} ${styles.glow}`}
               >
                 <div className={`h-1 w-full ${styles.strip}`} />
-                <div className="flex flex-col">
-                  <div className="p-8 md:p-12 flex flex-col justify-center">
+                <div className={`flex flex-col ${s.hasImages ? 'md:flex-row' : ''}`}>
+                  <div className={`p-8 md:p-12 flex flex-col justify-center ${s.hasImages ? 'md:w-1/2' : ''}`}>
                     <h3 className="font-display font-extrabold text-xl md:text-2xl mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
                       {s.title}
                     </h3>
@@ -137,6 +149,30 @@ const Services = () => {
                       </a>
                     </div>
                   </div>
+                  {s.hasImages && (
+                    <div className="md:w-1/2 p-8 md:p-12 flex items-center justify-center">
+                      <div className="relative w-full h-64 md:h-80">
+                        {reportImages.map((img, idx) => (
+                          <motion.img
+                            key={idx}
+                            src={img.src}
+                            alt={img.alt}
+                            initial={{ opacity: 0, y: 30, rotate: 0 }}
+                            whileInView={{ opacity: 1, y: 0, rotate: img.rotate }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: idx * 0.1 }}
+                            className="absolute rounded-lg shadow-2xl border border-border/30"
+                            style={{
+                              width: '55%',
+                              left: `${img.x}px`,
+                              top: `${img.y}px`,
+                              zIndex: img.z,
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             );
