@@ -8,31 +8,36 @@ import brochureCollage from "@/assets/brochure-collage.png";
 import infographicsCollage from "@/assets/infographics-collage.png";
 import illustrationsCollage from "@/assets/illustrations-collage.png";
 const services = [{
-  title: "Research reports that people actually want to read",
+  titleBig: "Reports",
+  titleSmall: "that people actually want to read",
   description: "Your 50-page report took months to research. We make sure your stakeholders don't just skim the executive summary — they engage with every finding.",
   bullets: ["AODA-compliant & accessible to all readers", "Clear visual hierarchy that guides through complex findings", "Data visualizations that make statistics instantly clear", "Branded templates you can reuse for future reports"],
   accent: "primary" as const,
   image: reportsCollage
 }, {
-  title: "Slide decks that tell stories, not just list facts",
+  titleBig: "Slide Decks",
+  titleSmall: "that tell stories, not just list facts",
   description: "You've got 20 minutes to convince funders or stakeholders. We design presentations that guide your audience through a clear, persuasive narrative.",
   bullets: ["One key idea per slide — no more walls of text", "Data visualizations that support your story", "Consistent branding that looks polished and professional", "Both presentation and handout versions included"],
   accent: "accent" as const,
   image: slidesCollage
 }, {
-  title: "Flyers and brochures designed with purpose",
+  titleBig: "Flyers, Posters, Brochures",
+  titleSmall: "designed with purpose",
   description: "We create inclusive, high-impact print and digital collateral that ensures your message gets the attention it deserves.",
   bullets: ["Built for both print distribution and digital sharing", "Eye-catching layouts that capture attention fast", "Engaging visuals that support your message", "Accessible and inclusive by design"],
   accent: "primary" as const,
   image: brochureCollage
 }, {
-  title: "Complex data, instantly understood",
+  titleBig: "Infographics",
+  titleSmall: "complex data instantly understood",
   description: "Turn dense research and statistics into visual stories that any audience can grasp at a glance.",
   bullets: ["Clear visual storytelling that highlights key takeaways", "Simplifies complex data into digestible formats", "Designed for accessibility and AODA compliance", "Optimized for use across print, web, and social media"],
   accent: "accent" as const,
   image: infographicsCollage
 }, {
-  title: "Custom illustrations that bring your story to life",
+  titleBig: "Custom Illustrations",
+  titleSmall: "that bring your story to life",
   description: "Off-the-shelf stock art can't capture your unique mission. We create bespoke illustrations that complement your data and make your narrative unforgettable.",
   bullets: ["Tailored visuals that reflect your community and context", "Humanizes complex data with relatable imagery", "Consistent style across all your materials", "Inclusive, culturally sensitive representation by design"],
   accent: "primary" as const,
@@ -87,7 +92,7 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((s, i) => {
           const styles = accentStyles[s.accent];
-          return <motion.div key={s.title} initial={{
+          return <motion.div key={s.titleBig} initial={{
             opacity: 0,
             y: 30
           }} whileInView={{
@@ -103,7 +108,7 @@ const Services = () => {
                 <div className="flex flex-col">
                   {/* Stacked report images inside the first card */}
                   {s.image && <div className="w-full overflow-hidden bg-background/50 flex items-center justify-center p-4 md:p-6">
-                      <motion.img alt={`${s.title} showcase`} initial={{
+                      <motion.img alt={`${s.titleBig} showcase`} initial={{
                   opacity: 0,
                   y: 20
                 }} whileInView={{
@@ -118,17 +123,11 @@ const Services = () => {
                 }} loading="eager" src={s.image} />
                     </div>}
                   <div className="p-6 md:p-8 flex flex-col justify-center">
-                    {(() => {
-                      const words = s.title.split(' ');
-                      const bigPart = words.slice(0, 2).join(' ');
-                      const rest = words.slice(2).join(' ');
-                      return (
-                        <h3 className="font-display font-extrabold mb-3">
-                          <span className="block text-2xl md:text-3xl text-primary">{bigPart}</span>
-                          {rest && <span className="block text-lg md:text-xl text-foreground">{rest}</span>}
-                        </h3>
-                      );
-                    })()}
+                    <h3 className="font-display font-extrabold mb-3">
+                      <span className="block text-2xl md:text-3xl text-primary">{s.titleBig}</span>
+                      {s.titleSmall && <span className="block text-lg md:text-xl text-foreground">{s.titleSmall}</span>}
+                    </h3>
+                    
                     <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                       {s.description}
                     </p>
