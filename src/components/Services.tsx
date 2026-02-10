@@ -8,10 +8,10 @@ import reportPage3 from "@/assets/report-page-3.png";
 import reportPage4 from "@/assets/report-page-4.png";
 
 const reportImages = [
-  { src: reportPage3, alt: "Report preface page", rotate: -14, offsetX: -50, offsetY: -45 },
-  { src: reportPage4, alt: "Report recommendations page", rotate: -5, offsetX: -15, offsetY: -15 },
-  { src: reportPage1, alt: "Report inclusion model page", rotate: 5, offsetX: 15, offsetY: 15 },
-  { src: reportPage2, alt: "Report services model page", rotate: 14, offsetX: 50, offsetY: 45 },
+  { src: reportPage3, alt: "Report preface page" },
+  { src: reportPage4, alt: "Report recommendations page" },
+  { src: reportPage1, alt: "Report inclusion model page" },
+  { src: reportPage2, alt: "Report services model page" },
 ];
 
 const services = [
@@ -110,7 +110,30 @@ const Services = () => {
           </p>
         </motion.div>
 
-        <div className="space-y-8">
+        {/* Report images grid - shown above the first service card */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+        >
+          {reportImages.map((img, idx) => (
+            <motion.img
+              key={idx}
+              src={img.src}
+              alt={img.alt}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              className="w-full rounded-lg shadow-xl border border-border/20 hover:scale-105 transition-transform duration-300"
+            />
+          ))}
+        </motion.div>
+
+        {/* Services 2x2 grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((s, i) => {
             const styles = accentStyles[s.accent];
             return (
@@ -123,15 +146,15 @@ const Services = () => {
                 className={`group relative bg-card border border-border rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl ${styles.border} ${styles.glow}`}
               >
                 <div className={`h-1 w-full ${styles.strip}`} />
-                <div className={`flex flex-col ${'image' in s ? 'md:flex-row' : ''}`}>
-                  <div className={`p-8 md:p-12 flex flex-col justify-center ${'image' in s ? 'md:w-1/2' : ''}`}>
-                    <h3 className="font-display font-extrabold text-xl md:text-2xl mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
+                <div className="flex flex-col">
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <h3 className="font-display font-extrabold text-lg md:text-xl mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
                       {s.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                       {s.description}
                     </p>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2">
                       {s.bullets.map((b) => (
                         <li key={b} className="flex items-start gap-3 text-sm text-foreground/90">
                           <CheckCircle2 className={`w-4 h-4 ${styles.check} mt-0.5 shrink-0`} />
@@ -139,7 +162,7 @@ const Services = () => {
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-8">
+                    <div className="mt-6">
                       <a
                         href="#contact"
                         className={`inline-flex items-center gap-2 text-sm font-semibold ${styles.check} group/link`}
@@ -149,25 +172,6 @@ const Services = () => {
                       </a>
                     </div>
                   </div>
-                  {'hasImages' in s && (
-                    <div className="md:w-1/2 flex items-center justify-center p-6 md:p-12">
-                      <div className="relative w-72 h-64 md:w-80 md:h-72 mx-auto">
-                        {reportImages.map((img, idx) => (
-                          <motion.img
-                            key={idx}
-                            src={img.src}
-                            alt={img.alt}
-                            initial={{ opacity: 0, y: 40, rotate: 0, x: "-50%", translateY: "-50%" }}
-                            whileInView={{ opacity: 1, y: img.offsetY, rotate: img.rotate, x: `calc(-50% + ${img.offsetX}px)`, translateY: "-50%" }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: idx * 0.1 }}
-                            className="absolute left-1/2 top-1/2 w-[70%] rounded-lg shadow-2xl border border-border/20"
-                            style={{ zIndex: idx }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </div>
               </motion.div>
             );
