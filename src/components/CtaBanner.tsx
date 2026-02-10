@@ -22,7 +22,7 @@ const CtaBanner = () => {
         <h2 className="text-2xl md:text-4xl font-display font-extrabold text-secondary-foreground mb-4 relative z-10">
           Ready to make your work
           <br />
-          <span className="text-primary">impossible to ignore?</span>
+          <span className="text-acid">impossible to ignore?</span>
         </h2>
         <p className="text-secondary-foreground/60 mb-8 max-w-md mx-auto relative z-10">
           No pressure. Just a conversation about your goals.

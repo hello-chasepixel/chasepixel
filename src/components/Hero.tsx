@@ -29,9 +29,9 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 bg-primary/10 text-primary font-semibold text-sm tracking-wide uppercase px-5 py-2 rounded-full mb-8"
+            className="inline-flex items-center gap-2 bg-acid/15 text-foreground font-semibold text-sm tracking-wide uppercase px-5 py-2 rounded-full mb-8"
           >
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-acid rounded-full animate-pulse" />
             Design that drives impact
           </motion.div>
 
@@ -50,7 +50,7 @@ const Hero = () => {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="absolute -bottom-1 left-0 w-full h-1.5 bg-accent/60 origin-left rounded-full"
+                className="absolute -bottom-1 left-0 w-full h-1.5 bg-acid origin-left rounded-full"
               />
             </span>
           </motion.h1>
