@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
 
 const Footer = () => {
@@ -10,9 +11,14 @@ const Footer = () => {
         <p className="text-muted-foreground text-xs">
           Design that brings your ideas to life
         </p>
-        <p className="text-muted-foreground text-xs">
-          © {new Date().getFullYear()} Chasepixel
-        </p>
+        <div className="flex items-center gap-4">
+          <Link to="/privacy-policy" className="text-muted-foreground text-xs hover:text-foreground transition-colors">
+            Privacy Policy
+          </Link>
+          <p className="text-muted-foreground text-xs">
+            © {new Date().getFullYear()} Chasepixel
+          </p>
+        </div>
       </div>
     </footer>
   );
