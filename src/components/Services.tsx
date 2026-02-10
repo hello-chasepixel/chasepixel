@@ -6,6 +6,7 @@ import reportsCollage from "@/assets/reports-collage.png";
 import slidesCollage from "@/assets/slides-collage.png";
 import brochureCollage from "@/assets/brochure-collage.png";
 import infographicsCollage from "@/assets/infographics-collage.png";
+import illustrationsCollage from "@/assets/illustrations-collage.png";
 const services = [{
   title: "Research reports that people actually want to read",
   description: "Your 50-page report took months to research. We make sure your stakeholders don't just skim the executive summary — they engage with every finding.",
@@ -30,6 +31,12 @@ const services = [{
   bullets: ["Clear visual storytelling that highlights key takeaways", "Simplifies complex data into digestible formats", "Designed for accessibility and AODA compliance", "Optimized for use across print, web, and social media"],
   accent: "accent" as const,
   image: infographicsCollage
+}, {
+  title: "Custom illustrations that bring your story to life",
+  description: "Off-the-shelf stock art can't capture your unique mission. We create bespoke illustrations that complement your data and make your narrative unforgettable.",
+  bullets: ["Tailored visuals that reflect your community and context", "Humanizes complex data with relatable imagery", "Consistent style across all your materials", "Inclusive, culturally sensitive representation by design"],
+  accent: "primary" as const,
+  image: illustrationsCollage
 }];
 const accentStyles = {
   primary: {
