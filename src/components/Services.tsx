@@ -126,6 +126,8 @@ const Services = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
                         className="w-full rounded-md"
+                        style={{ imageRendering: 'auto' }}
+                        loading="eager"
                       />
                     </div>
                   )}
