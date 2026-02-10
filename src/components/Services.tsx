@@ -110,28 +110,6 @@ const Services = () => {
           </p>
         </motion.div>
 
-        {/* Report images grid - shown above the first service card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
-        >
-          {reportImages.map((img, idx) => (
-            <motion.img
-              key={idx}
-              src={img.src}
-              alt={img.alt}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="w-full rounded-lg shadow-xl border border-border/20 hover:scale-105 transition-transform duration-300"
-            />
-          ))}
-        </motion.div>
-
         {/* Services 2x2 grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((s, i) => {
@@ -147,6 +125,29 @@ const Services = () => {
               >
                 <div className={`h-1 w-full ${styles.strip}`} />
                 <div className="flex flex-col">
+                  {/* Stacked report images inside the first card */}
+                  {'hasImages' in s && (
+                    <div className="relative w-full h-56 md:h-72 overflow-hidden bg-background/50 flex items-center justify-center">
+                      {reportImages.map((img, idx) => (
+                        <motion.img
+                          key={idx}
+                          src={img.src}
+                          alt={img.alt}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            rotate: [-8, -3, 3, 8][idx],
+                            x: [-40, -12, 16, 44][idx],
+                          }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: idx * 0.1 }}
+                          className="absolute w-[45%] rounded-lg shadow-2xl border border-border/20"
+                          style={{ zIndex: idx }}
+                        />
+                      ))}
+                    </div>
+                  )}
                   <div className="p-6 md:p-8 flex flex-col justify-center">
                     <h3 className="font-display font-extrabold text-lg md:text-xl mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
                       {s.title}
