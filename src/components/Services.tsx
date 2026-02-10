@@ -8,10 +8,10 @@ import reportPage3 from "@/assets/report-page-3.png";
 import reportPage4 from "@/assets/report-page-4.png";
 
 const reportImages = [
-  { src: reportPage3, alt: "Report preface page", rotate: -8, offsetX: -20, offsetY: -15 },
-  { src: reportPage4, alt: "Report recommendations page", rotate: -3, offsetX: -8, offsetY: -5 },
-  { src: reportPage1, alt: "Report inclusion model page", rotate: 3, offsetX: 8, offsetY: 5 },
-  { src: reportPage2, alt: "Report services model page", rotate: 7, offsetX: 20, offsetY: 15 },
+  { src: reportPage3, alt: "Report preface page", rotate: -10, offsetX: -30, offsetY: -30 },
+  { src: reportPage4, alt: "Report recommendations page", rotate: -4, offsetX: -10, offsetY: -10 },
+  { src: reportPage1, alt: "Report inclusion model page", rotate: 4, offsetX: 10, offsetY: 10 },
+  { src: reportPage2, alt: "Report services model page", rotate: 10, offsetX: 30, offsetY: 30 },
 ];
 
 const services = [
@@ -157,15 +157,12 @@ const Services = () => {
                             key={idx}
                             src={img.src}
                             alt={img.alt}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 40, rotate: 0, x: "-50%", translateY: "-50%" }}
+                            whileInView={{ opacity: 1, y: img.offsetY, rotate: img.rotate, x: `calc(-50% + ${img.offsetX}px)`, translateY: "-50%" }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
                             className="absolute left-1/2 top-1/2 w-[70%] rounded-lg shadow-2xl border border-border/20"
-                            style={{
-                              transform: `translate(calc(-50% + ${img.offsetX}px), calc(-50% + ${img.offsetY}px)) rotate(${img.rotate}deg)`,
-                              zIndex: idx,
-                            }}
+                            style={{ zIndex: idx }}
                           />
                         ))}
                       </div>
