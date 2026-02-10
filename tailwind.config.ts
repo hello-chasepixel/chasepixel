@@ -64,9 +64,9 @@ export default {
         },
         sunshine: "hsl(49, 100%, 71%)",
         coral: "hsl(0, 100%, 76%)",
-        teal: {
-          DEFAULT: "hsl(176, 58%, 55%)",
-          dark: "hsl(176, 58%, 45%)",
+        purple: {
+          DEFAULT: "hsl(271, 70%, 59%)",
+          dark: "hsl(271, 70%, 49%)",
         },
         navy: {
           DEFAULT: "hsl(240, 27%, 14%)",
