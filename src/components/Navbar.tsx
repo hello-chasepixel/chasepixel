@@ -12,9 +12,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-6">
-        <a href="#" className="font-display text-xl font-bold tracking-wide text-foreground">
+        <a href="#" className="font-display text-xl font-extrabold tracking-wide text-foreground">
           chase<span className="text-primary">pixel</span>
         </a>
 
@@ -23,14 +23,14 @@ const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
             >
               {l.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="text-sm font-semibold bg-primary text-primary-foreground px-5 py-2 rounded-full hover:opacity-90 transition-opacity"
+            className="text-sm font-bold bg-primary text-primary-foreground px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all"
           >
             Let's Talk
           </a>
@@ -59,7 +59,7 @@ const Navbar = () => {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                  className="text-muted-foreground hover:text-foreground transition-colors font-semibold"
                 >
                   {l.label}
                 </a>
@@ -67,7 +67,7 @@ const Navbar = () => {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="text-sm font-semibold bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-center hover:opacity-90 transition-opacity"
+                className="text-sm font-bold bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-center hover:opacity-90 transition-opacity"
               >
                 Let's Talk
               </a>
