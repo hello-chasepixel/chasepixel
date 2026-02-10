@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import { LetterE, LetterA } from "./Logo";
 import portfolioReport from "@/assets/portfolio-report.jpg";
 import portfolioSlides from "@/assets/portfolio-slides.jpg";
@@ -18,7 +18,7 @@ const services = [
       "Data visualizations that make statistics instantly clear",
       "Branded templates you can reuse for future reports",
     ],
-    accentColor: "bg-primary",
+    accent: "primary" as const,
   },
   {
     image: portfolioSlides,
@@ -31,7 +31,7 @@ const services = [
       "Consistent branding that looks polished and professional",
       "Both presentation and handout versions included",
     ],
-    accentColor: "bg-accent",
+    accent: "accent" as const,
   },
   {
     image: portfolioBrochure,
@@ -44,7 +44,7 @@ const services = [
       "Engaging visuals that support your message",
       "Accessible and inclusive by design",
     ],
-    accentColor: "bg-primary",
+    accent: "primary" as const,
   },
   {
     image: portfolioInfographic,
@@ -57,9 +57,26 @@ const services = [
       "Designed for accessibility and AODA compliance",
       "Optimized for use across print, web, and social media",
     ],
-    accentColor: "bg-accent",
+    accent: "accent" as const,
   },
 ];
+
+const accentStyles = {
+  primary: {
+    border: "hover:border-primary/40",
+    glow: "hover:shadow-primary/10",
+    strip: "bg-primary",
+    check: "text-primary",
+    tag: "bg-primary/10 text-primary",
+  },
+  accent: {
+    border: "hover:border-accent/40",
+    glow: "hover:shadow-accent/10",
+    strip: "bg-accent",
+    check: "text-accent",
+    tag: "bg-accent/10 text-accent",
+  },
+};
 
 const Services = () => {
   return (
@@ -79,53 +96,75 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-bold tracking-widest uppercase text-accent mb-3">What we do</p>
-          <h2 className="text-3xl md:text-5xl font-display font-extrabold text-foreground">
+          <p className="text-sm font-bold tracking-widest uppercase text-acid mb-3">What we do</p>
+          <h2 className="text-3xl md:text-5xl font-display font-extrabold text-foreground mb-4">
             Design that makes complexity
             <br className="hidden md:block" />
             <span className="text-primary"> feel effortless</span>
           </h2>
+          <p className="text-muted-foreground max-w-lg mx-auto">
+            We partner with researchers, nonprofits, and mission-driven organizations to create documents that get read, shared, and acted upon.
+          </p>
         </motion.div>
 
-        <div className="space-y-10">
-          {services.map((s, i) => (
-            <motion.div
-              key={s.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
-            >
-              <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-0`}>
-                <div className="md:w-2/5 aspect-[4/3] md:aspect-auto overflow-hidden relative">
-                  <img
-                    src={s.image}
-                    alt={`Example of ${s.title}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className={`absolute ${i % 2 === 0 ? "right-0 top-0 w-1 h-full" : "left-0 top-0 w-1 h-full"} ${s.accentColor} hidden md:block`} />
+        <div className="space-y-8">
+          {services.map((s, i) => {
+            const styles = accentStyles[s.accent];
+            return (
+              <motion.div
+                key={s.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                className={`group relative bg-card border border-border rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl ${styles.border} ${styles.glow}`}
+              >
+                {/* Top accent strip */}
+                <div className={`h-1 w-full ${styles.strip}`} />
+
+                <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
+                  {/* Image side */}
+                  <div className="md:w-2/5 aspect-[4/3] md:aspect-auto overflow-hidden relative">
+                    <img
+                      src={s.image}
+                      alt={`Example of ${s.title}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    {/* Gradient overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-${i % 2 === 0 ? "r" : "l"} from-transparent to-card/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                  </div>
+
+                  {/* Content side */}
+                  <div className="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
+                    <h3 className="font-display font-extrabold text-xl md:text-2xl mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
+                      {s.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                      {s.description}
+                    </p>
+                    <ul className="space-y-3">
+                      {s.bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-3 text-sm text-foreground/90">
+                          <CheckCircle2 className={`w-4 h-4 ${styles.check} mt-0.5 shrink-0`} />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8">
+                      <a
+                        href="#contact"
+                        className={`inline-flex items-center gap-2 text-sm font-semibold ${styles.check} group/link`}
+                      >
+                        Get started
+                        <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
-                  <h3 className="font-display font-extrabold text-xl md:text-2xl mb-3 text-foreground">
-                    {s.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    {s.description}
-                  </p>
-                  <ul className="space-y-2.5">
-                    {s.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2.5 text-sm text-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
