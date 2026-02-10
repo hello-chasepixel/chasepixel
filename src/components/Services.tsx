@@ -2,14 +2,9 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { LetterE, LetterA } from "./Logo";
 import FloatingLetter from "./FloatingLetter";
-import portfolioReport from "@/assets/portfolio-report.jpg";
-import portfolioSlides from "@/assets/portfolio-slides.jpg";
-import portfolioBrochure from "@/assets/portfolio-brochure.jpg";
-import portfolioInfographic from "@/assets/portfolio-infographic.jpg";
 
 const services = [
   {
-    image: portfolioReport,
     title: "Research reports that people actually want to read",
     description:
       "Your 50-page report took months to research. We make sure your stakeholders don't just skim the executive summary — they engage with every finding.",
@@ -22,7 +17,6 @@ const services = [
     accent: "primary" as const,
   },
   {
-    image: portfolioSlides,
     title: "Slide decks that tell stories, not just list facts",
     description:
       "You've got 20 minutes to convince funders or stakeholders. We design presentations that guide your audience through a clear, persuasive narrative.",
@@ -35,7 +29,6 @@ const services = [
     accent: "accent" as const,
   },
   {
-    image: portfolioBrochure,
     title: "Flyers and brochures designed with purpose",
     description:
       "We create inclusive, high-impact print and digital collateral that ensures your message gets the attention it deserves.",
@@ -48,7 +41,6 @@ const services = [
     accent: "primary" as const,
   },
   {
-    image: portfolioInfographic,
     title: "Complex data, instantly understood",
     description:
       "Turn dense research and statistics into visual stories that any audience can grasp at a glance.",
@@ -119,16 +111,8 @@ const Services = () => {
                 className={`group relative bg-card border border-border rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl ${styles.border} ${styles.glow}`}
               >
                 <div className={`h-1 w-full ${styles.strip}`} />
-                <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                  <div className="md:w-2/5 aspect-[4/3] md:aspect-auto overflow-hidden relative">
-                    <img
-                      src={s.image}
-                      alt={`Example of ${s.title}`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
+                <div className="flex flex-col">
+                  <div className="p-8 md:p-12 flex flex-col justify-center">
                     <h3 className="font-display font-extrabold text-xl md:text-2xl mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
                       {s.title}
                     </h3>
