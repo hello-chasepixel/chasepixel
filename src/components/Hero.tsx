@@ -50,11 +50,11 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-[1.1] tracking-tight mb-8 text-foreground"
           >
-            Your research
+            Your brilliant work
             <br />
-            deserves to be{" "}
+            deserves{" "}
             <span className="relative inline-block">
-              <span className="text-primary">understood</span>
+              <span className="text-primary">brilliant design</span>
               <motion.span
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
@@ -70,7 +70,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed"
           >
-            We transform complex data, research, and ideas into clear, accessible, and beautifully designed documents that drive impact.
+            We create reports, presentations, websites, and marketing materials that make complex ideas clear, accessible, and impossible to ignore.
           </motion.p>
 
           <motion.div
