@@ -40,7 +40,7 @@ const Hero = () => {
             transition={{ duration: 0.4 }}
             className="inline-flex items-center gap-2 bg-primary/15 text-primary font-semibold text-sm tracking-wide uppercase px-5 py-2 rounded-full mb-8 border border-primary/20"
           >
-            <span className="w-2 h-2 bg-acid rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             Design that drives impact
           </motion.div>
 
