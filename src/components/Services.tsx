@@ -145,12 +145,6 @@ const Services = () => {
                           {b}
                         </li>)}
                     </ul>
-                    <div className="mt-6">
-                      <a href="#contact" className={`inline-flex items-center gap-2 text-sm font-semibold ${styles.check} group/link`}>
-                        Get started
-                        <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-                      </a>
-                    </div>
                   </div>
                 </div>
               </motion.div>;
