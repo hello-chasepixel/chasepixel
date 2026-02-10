@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
+import { LetterA, LetterX } from "./Logo";
 
 const Contact = () => {
   return (
     <section id="contact" className="py-20 md:py-28 relative overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="absolute top-16 left-[8%] w-20 h-20 border-2 border-primary/15 rounded-full" />
-      <div className="absolute bottom-20 right-[10%] w-10 h-10 bg-accent/10 rotate-45" />
+      {/* Letter-shaped decorations */}
+      <div className="absolute top-12 left-[6%] w-24 h-24 text-primary/[0.05] rotate-6">
+        <LetterA />
+      </div>
+      <div className="absolute bottom-16 right-[8%] w-20 h-20 text-accent/[0.06] -rotate-12">
+        <LetterX />
+      </div>
 
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
