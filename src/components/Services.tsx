@@ -124,7 +124,7 @@ const Services = () => {
                       const rest = words.slice(2).join(' ');
                       return (
                         <h3 className="font-display font-extrabold mb-3">
-                          <span className="block text-xl md:text-2xl text-primary">{bigPart}</span>
+                          <span className="block text-2xl md:text-3xl text-primary">{bigPart}</span>
                           {rest && <span className="block text-lg md:text-xl text-foreground">{rest}</span>}
                         </h3>
                       );
