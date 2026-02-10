@@ -8,10 +8,10 @@ import reportPage3 from "@/assets/report-page-3.png";
 import reportPage4 from "@/assets/report-page-4.png";
 
 const reportImages = [
-  { src: reportPage3, alt: "Report preface page", rotate: -10, offsetX: -30, offsetY: -30 },
-  { src: reportPage4, alt: "Report recommendations page", rotate: -4, offsetX: -10, offsetY: -10 },
-  { src: reportPage1, alt: "Report inclusion model page", rotate: 4, offsetX: 10, offsetY: 10 },
-  { src: reportPage2, alt: "Report services model page", rotate: 10, offsetX: 30, offsetY: 30 },
+  { src: reportPage3, alt: "Report preface page", rotate: -14, offsetX: -50, offsetY: -45 },
+  { src: reportPage4, alt: "Report recommendations page", rotate: -5, offsetX: -15, offsetY: -15 },
+  { src: reportPage1, alt: "Report inclusion model page", rotate: 5, offsetX: 15, offsetY: 15 },
+  { src: reportPage2, alt: "Report services model page", rotate: 14, offsetX: 50, offsetY: 45 },
 ];
 
 const services = [
