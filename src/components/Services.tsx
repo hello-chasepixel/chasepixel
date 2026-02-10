@@ -17,6 +17,7 @@ const services = [
       "Data visualizations that make statistics instantly clear",
       "Branded templates you can reuse for future reports",
     ],
+    accentColor: "bg-primary",
   },
   {
     image: portfolioSlides,
@@ -29,6 +30,7 @@ const services = [
       "Consistent branding that looks polished and professional",
       "Both presentation and handout versions included",
     ],
+    accentColor: "bg-accent",
   },
   {
     image: portfolioBrochure,
@@ -41,6 +43,7 @@ const services = [
       "Engaging visuals that support your message",
       "Accessible and inclusive by design",
     ],
+    accentColor: "bg-primary",
   },
   {
     image: portfolioInfographic,
@@ -53,12 +56,17 @@ const services = [
       "Designed for accessibility and AODA compliance",
       "Optimized for use across print, web, and social media",
     ],
+    accentColor: "bg-accent",
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 md:py-28">
+    <section id="services" className="py-20 md:py-28 relative overflow-hidden">
+      {/* Decorative background shapes */}
+      <div className="absolute top-20 left-[-5%] w-48 h-48 bg-accent/5 rounded-full blur-2xl" />
+      <div className="absolute bottom-40 right-[-3%] w-36 h-36 bg-primary/5 rounded-full blur-2xl" />
+
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,9 +74,11 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">What we do</p>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground">
-            Design that makes complexity<br className="hidden md:block" /> feel effortless
+          <p className="text-sm font-bold tracking-widest uppercase text-accent mb-3">What we do</p>
+          <h2 className="text-3xl md:text-5xl font-display font-extrabold text-foreground">
+            Design that makes complexity
+            <br className="hidden md:block" />
+            <span className="text-primary"> feel effortless</span>
           </h2>
         </motion.div>
 
@@ -80,19 +90,21 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
+              className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
             >
               <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-0`}>
-                <div className="md:w-2/5 aspect-[4/3] md:aspect-auto overflow-hidden">
+                <div className="md:w-2/5 aspect-[4/3] md:aspect-auto overflow-hidden relative">
                   <img
                     src={s.image}
                     alt={`Example of ${s.title}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
+                  {/* Color accent strip */}
+                  <div className={`absolute ${i % 2 === 0 ? "right-0 top-0 w-1 h-full" : "left-0 top-0 w-1 h-full"} ${s.accentColor} hidden md:block`} />
                 </div>
                 <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
-                  <h3 className="font-display font-bold text-xl md:text-2xl mb-3 text-foreground">
+                  <h3 className="font-display font-extrabold text-xl md:text-2xl mb-3 text-foreground">
                     {s.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
