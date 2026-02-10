@@ -19,7 +19,7 @@ const services = [{
   titleBig: "Slide Decks",
   titleSmall: "that tell stories, not just list facts",
   description: "You've got 20 minutes to convince funders or stakeholders. We design presentations that guide your audience through a clear, persuasive narrative.",
-  bullets: ["One key idea per slide — no more walls of text", "Data visualizations that support your story", "Consistent branding that looks polished and professional", "Both presentation and handout versions included"],
+  bullets: ["One key idea per slide — no more walls of text", "Data visualizations that support your story", "Consistent branding that looks polished and professional", "Final PDF, PowerPoint, and Google Slides versions included"],
   accent: "accent" as const,
   image: slidesCollage
 }, {
