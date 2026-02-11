@@ -70,7 +70,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed"
           >
-            We create reports, presentations, websites, and marketing materials that make complex ideas clear, accessible, and impossible to ignore.
+            We design reports, presentations, websites, and marketing materials that make complex ideas clear, accessible, and impossible to ignore.
           </motion.p>
 
           <motion.div
