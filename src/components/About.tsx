@@ -63,7 +63,7 @@ const About = () => {
               </h2>
               <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
                 <p>
-                  I started Chasepixel because I kept seeing brilliant people doing important work… and then burying it in documents that nobody wanted to read. Dense research reports. Cluttered slide decks. Websites that didn't reflect the quality of the thinking behind them.
+                  I started Chasepixel because I kept seeing brilliant people doing important work… but they were living in text-heavy documents that nobody wanted to read. Dense research reports. Cluttered slide decks. Websites that didn't reflect the quality of the thinking behind them.
                 </p>
                 <p className="text-foreground font-semibold text-xl">
                   I believe your expertise deserves design that matches it.
